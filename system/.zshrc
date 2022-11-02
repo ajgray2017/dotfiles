@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/adam/.oh-my-zsh"
@@ -104,9 +104,25 @@ source $ZSH/oh-my-zsh.sh
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/intrinsic/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/intrinsic/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/adam/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/adam/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/intrinsic/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/intrinsic/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/adam/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/adam/google-cloud-sdk/completion.zsh.inc'; fi
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/adam/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/adam/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/adam/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/adam/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
